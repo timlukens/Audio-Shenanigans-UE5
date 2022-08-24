@@ -1,4 +1,4 @@
-Binaries/*
-Saved/*
-Intermediate/*
+Binaries/
+Saved/
+Intermediate/
 *.ipch
