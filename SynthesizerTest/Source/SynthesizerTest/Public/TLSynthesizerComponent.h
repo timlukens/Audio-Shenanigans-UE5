@@ -29,6 +29,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		double RandomMax = 1.0;
 
+	UFUNCTION(BlueprintCallable)
+		void Trigger();
+
 	virtual ISoundGeneratorPtr CreateSoundGenerator(const FSoundGeneratorInitParams& InParams) override;
 
 protected:

@@ -1,4 +1,7 @@
-Binaries/
-Saved/
-Intermediate/
+SynthesizerTest/Binaries/
+SynthesizerTest/Saved/
+SynthesizerTest/Intermediate/
 *.ipch
+SynthesizerTest/.vs
+*.db
+*.db

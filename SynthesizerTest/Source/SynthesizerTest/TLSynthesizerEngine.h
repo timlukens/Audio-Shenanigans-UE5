@@ -2,6 +2,8 @@
 
 #include "CoreMinimal.h"
 #include "Components/SynthComponent.h"
+#include "DSP/Envelope.h"
+#include "DSP/Delay.h"
 
 
 class TLSynthesizerEngine
@@ -18,7 +20,14 @@ public:
 	double InputVelocity = 1;
 	double OriginalFrequency;
 
+	Audio::FADEnvelope* GainEnvelope;
+	Audio::FDelay* Delay;
+
+	void Trigger();
+
 private:
+	TArray<float> FeedbackSamples;
+
 	void CreateWaveTable(int32 NumSamples);
 	float* WaveTable;
 	int TableSize;

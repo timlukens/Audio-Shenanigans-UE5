@@ -14,6 +14,13 @@ UTLSynthesizerComponent::UTLSynthesizerComponent(const FObjectInitializer& Objec
 	//UE_LOG(LogTemp, Warning, TEXT("UTLSynthesizerComponent alloc"));
 }
 
+void UTLSynthesizerComponent::Trigger() {
+	if (TLSynthEngine != nullptr) {
+		if (TLSynthesizerEngine* TLS = static_cast<TLSynthesizerEngine*>(TLSynthEngine.Get()))
+			TLS->Trigger();
+	}
+}
+
 ISoundGeneratorPtr UTLSynthesizerComponent::CreateSoundGenerator(const FSoundGeneratorInitParams& InParams) {
 	TLSynthEngine = ISoundGeneratorPtr(new TLSynthesizerEngine());
 
